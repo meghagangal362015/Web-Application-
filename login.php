@@ -3,9 +3,10 @@
  * Login Page - Administrator Authentication
  * Artisan Jewelry by Megha - Secure Section
  *
- * Uses userid and password authentication method:
+ * Uses Message Digest (Hash-Based Password Authentication):
  * - Valid userid: admin
- * - Password checked against stored value
+ * - Password stored as SHA-256 hash (message digest) - never plain text
+ * - On login: hash submitted password and compare with stored hash
  * - Session-based: sets session on success, redirects to secure section
  */
 
@@ -17,9 +18,10 @@ if (isset($_SESSION['logged_in']) && $_SESSION['logged_in'] === true) {
     exit;
 }
 
-// Administrator credentials (userid and password authentication)
+// Administrator credentials - Message Digest (Hash-Based) Authentication
 $valid_userid = 'admin';
-$valid_password = 'admin123';
+// Store password as SHA-256 message digest (hash) - plain text "admin123" is never stored
+$valid_password_hash = hash('sha256', 'admin123');
 
 $errorMessage = '';
 
@@ -28,8 +30,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $userid = isset($_POST['userid']) ? trim($_POST['userid']) : '';
     $password = isset($_POST['password']) ? $_POST['password'] : '';
 
-    // Check userid and password
-    if ($userid === $valid_userid && $password === $valid_password) {
+    // Check userid and compare password hash (message digest) with stored hash
+    $password_hash = hash('sha256', $password);
+    if ($userid === $valid_userid && $password_hash === $valid_password_hash) {
         $_SESSION['logged_in'] = true;
         $_SESSION['user_id'] = $userid;
         header('Location: secure.php');
