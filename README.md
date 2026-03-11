@@ -18,16 +18,9 @@ company-website/
 ├── products.html       # Products/Services
 ├── news.html           # News (Latest company news)
 ├── contact.php         # Contacts (reads from data/contacts.txt)
-<<<<<<< HEAD
-├── login.php           # Admin login (session-based authentication)
-├── secure.php          # Protected admin page (user listing)
+├── login.php           # Admin login (userid/password authentication)
+├── secure.php          # Secure section (user listing, requires login)
 ├── logout.php          # Logout (destroys session)
-├── generate_password_hash.php  # CLI: generates auth config
-├── setup_auth.php      # Web: one-time auth setup (visit in browser)
-├── config/
-│   └── auth_config.php # Password hash (created by setup)
-=======
->>>>>>> e020bc2225ed7a3f470e514da683304d4dc38fea
 ├── README.md           # This file - project documentation
 │
 ├── css/
@@ -48,23 +41,17 @@ company-website/
 
 ---
 
-<<<<<<< HEAD
-## Administrator Section (Secure Login)
+## Secure Section (Administrator Login)
 
-**Credentials:** admin / Admin123!
+The secure section displays a document listing current website users. Access requires administrator login.
 
-**Setup (first time):** Visit `setup_auth.php` in your browser (e.g., `http://localhost/setup_auth.php`) to create the auth config. Or run `php generate_password_hash.php` from the project directory.
-
-**Fallback (no config):** admin / password
-
-- **login.php** – Login form (User ID + Password, POST method)
-- **secure.php** – Protected page with user list (Mary Smith, John Wang, Alex Bington, Sarah Johnson, David Lee)
+- **Credentials:** admin / admin123
+- **login.php** – Login form (User ID and Password)
+- **secure.php** – Protected page with user list (Mary Smith, John Wang, Alex Bington, etc.)
 - **logout.php** – Destroys session, redirects to login
 
 ---
 
-=======
->>>>>>> e020bc2225ed7a3f470e514da683304d4dc38fea
 ## How the PHP Contact Page Works
 
 The `contact.php` file:
