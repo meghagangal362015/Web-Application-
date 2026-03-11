@@ -18,6 +18,7 @@ company-website/
 ├── products.html       # Products/Services
 ├── news.html           # News (Latest company news)
 ├── contact.php         # Contacts (reads from data/contacts.txt)
+<<<<<<< HEAD
 ├── login.php           # Admin login (session-based authentication)
 ├── secure.php          # Protected admin page (user listing)
 ├── logout.php          # Logout (destroys session)
@@ -25,6 +26,8 @@ company-website/
 ├── setup_auth.php      # Web: one-time auth setup (visit in browser)
 ├── config/
 │   └── auth_config.php # Password hash (created by setup)
+=======
+>>>>>>> e020bc2225ed7a3f470e514da683304d4dc38fea
 ├── README.md           # This file - project documentation
 │
 ├── css/
@@ -45,6 +48,7 @@ company-website/
 
 ---
 
+<<<<<<< HEAD
 ## Administrator Section (Secure Login)
 
 **Credentials:** admin / Admin123!
@@ -59,6 +63,8 @@ company-website/
 
 ---
 
+=======
+>>>>>>> e020bc2225ed7a3f470e514da683304d4dc38fea
 ## How the PHP Contact Page Works
 
 The `contact.php` file:

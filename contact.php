@@ -62,7 +62,10 @@ if (file_exists($contactsFile)) {
                     <li><a href="products.html">Products & Services</a></li>
                     <li><a href="news.html">News</a></li>
                     <li><a href="contact.php">Contact</a></li>
+<<<<<<< HEAD
                     <li><a href="login.php">Login</a></li>
+=======
+>>>>>>> e020bc2225ed7a3f470e514da683304d4dc38fea
                 </ul>
             </nav>
         </div>
